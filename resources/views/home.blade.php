@@ -2,7 +2,7 @@
 
 
 
-@section('home_content')
+@section('content')
 
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

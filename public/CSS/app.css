@@ -525,3 +525,22 @@ nav ul li a:hover {
 }
 
 
+.login{
+  margin-left: 500px;
+}
+
+#navbarDropdown{
+  color: white;
+  padding-top: 10px;
+  /* margin-left: ; */
+  position:relative; 
+  left:40em;
+}
+
+#dropdown-menu{
+  margin-left: 65em;
+}
+
+.dropdown{
+  width: 0px;
+}

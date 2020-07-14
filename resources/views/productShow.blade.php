@@ -216,12 +216,20 @@
 
     .btn{
         width: 300px;
-        margin-top: 20px;
+        margin-top: 100px;
     }
     #menu{
         width: 300px;
     }
 
+    h1{
+        margin-top: 40px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .container{
+        margin: 0px
+    }
 
 </style>
 
@@ -235,7 +243,7 @@
 
 
 <div class="container"></div>
-        <h3 class="h3">Our Latest Products</h3>
+        <h1 class="h1">Our Latest Products</h1>
         <div class="col-md-3 col-sm-6">
 
         <div class="dropdown">

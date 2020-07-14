@@ -1,5 +1,19 @@
 @extends('layouts.app')
 
+@section('login-styles')
+
+<style>
+
+    .container{
+        margin-top: 100px;
+        margin-bottom: 155px;
+    }
+
+
+</style>
+    
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

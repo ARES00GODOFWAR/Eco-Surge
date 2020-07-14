@@ -8,14 +8,16 @@
     <title>{{ config('app.name', 'Eco-Surge') }}</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
-       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js">
+    </script>
+
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -41,8 +43,8 @@
 
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('CSS/app.css') }}" rel="stylesheet">
@@ -51,6 +53,8 @@
     @yield('styles')
     @yield('item_page_styles')
     @yield('product_page_styles')
+    @yield('login-styles')
+    @yield('registration-styles')
 </head>
 
 <body>
@@ -70,7 +74,7 @@
                     <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ route('home') }}">Home<span
                             class="sr-only">(current)</span></a>
                 </li>
-            
+
 
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('productShow') }}">Shop</a>
@@ -82,93 +86,67 @@
                     <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
             </ul>
-                @guest
-                <a class="nav-item nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            @guest
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active">
+                    <a class=" login nav-item nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+
                 @if (Route::has('register'))
-                    <a class="nav-item nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <li class="nav-item active">
+                    <a class=" register nav-item nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
                 @endif
+            </ul>
             @else
-                <div class="nav-item dropdown">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                        {{ Auth::user()->name }}
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{ Auth::user()->name }}
+                </a>
+                <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('login') }}">Profile</a>
+                    <a class="dropdown-item" href="/settings"> Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
                     </a>
-                    <div
-                        class="dropdown-menu"
-                        aria-labelledby="navbarDropdown"
-                    >
-                        <a class="dropdown-item" href="{{ route('login') }}">Profile</a>
-                        <a class="dropdown-item" href="/settings"> Settings</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                        >
-                            {{ __('Logout') }}
-                        </a>
-                    </div>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
                 </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
             @endguest
 
     </nav>
 
-
     <section>
-        <div class="home_content_container">
-
-            @yield('home_content')
-        
-        </div>
-
-    </section>
-
-    <section>
-        <div>
-
-            @yield('portfolio_content')
-            
-        </div>
-
-    </section>
-    <section>
-    
-            @yield('content')
-    </section>
-
-
-    <section>
-        <div>
-
-            @yield('checkout-content')
-            
-        </div>
-
+        @yield('content')
+        &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
     </section>
 
     <footer>
-    <div class="footer">
-        <ul id="footer-ul">
-            <li><a href="#">Stay Connected</a></li>
-            <li><a href="#">Something</a></li>
-            <li><a href="#">Something</a></li>
-            <li><a href="#">Something</a></li>
-        </ul>
-        <ul>
-            <li><p id="copyright-text" >Copyright&nbsp;<i id="copyright-symbol">&copy;&nbsp;</i>2020 UTech Sapna</p></li>
-            
-        </ul>
-    </div>
+        <div class="footer">
+            <ul id="footer-ul">
+                <li><a href="#">Stay Connected</a></li>
+                <li><a href="#">Something</a></li>
+                <li><a href="#">Something</a></li>
+                <li><a href="#">Something</a></li>
+            </ul>
+            <ul>
+                <li>
+                    <p id="copyright-text">Copyright&nbsp;<i id="copyright-symbol">&copy;&nbsp;</i>2020 UTech Sapna</p>
+                </li>
 
-</footer>
+            </ul>
+        </div>
+
+    </footer>
 
 </body>
 

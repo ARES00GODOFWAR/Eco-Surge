@@ -1,5 +1,20 @@
 @extends('layouts.app')
 
+
+@section('registration-styles')
+
+<style>
+
+    .container{
+        margin-top: 80px;
+        margin-bottom: 117px;
+    }
+
+
+</style>
+    
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

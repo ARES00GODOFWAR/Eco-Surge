@@ -23,7 +23,7 @@
 @endsection
 
 
-@section('checkout-content')
+@section('content')
 
 <body>
   <script src="https://www.paypal.com/sdk/js?client-id=AeDAGPmyWBCX3nwiM_S-lvVMbU2ueqhQrhX-9AFyrwkftNFt17TT6tVoMGoyUktBjiLjzk-jep_edrtC"></script>
