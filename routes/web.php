@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 })->name('home');
 
@@ -29,7 +29,14 @@ Route::get('/', function () {
 
 
 //checkout 
-Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.checkout');
+
+
+Route::group(['middleware' => ['auth']], function() {
+Route::get('/settings', 'Settings@settings');
+Route::post('/','Settings@changePassword')->name('changePassword');
+});
+
 
 Route::get('/productShow', function () {
     return view('productShow');
@@ -43,3 +50,5 @@ Route::get('/create', 'ProductController@create')->name('create');
 
 Route::post('/products', 'ProductController@store');
 Route::get('/products', 'ProductController@index')->name('productShow');
+
+

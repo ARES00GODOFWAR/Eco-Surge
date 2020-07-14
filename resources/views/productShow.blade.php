@@ -8,6 +8,8 @@
 
       .container{
          margin-top: 150px ;
+        
+         
       }
       .row{
         margin-left: 0px;
@@ -212,10 +214,14 @@
         }
     }
 
+    .btn{
+        width: 300px;
+        margin-top: 20px;
+    }
+    #menu{
+        width: 300px;
+    }
 
-
-
-    
 
 </style>
 
@@ -230,9 +236,25 @@
 
 <div class="container"></div>
         <h3 class="h3">Our Latest Products</h3>
+        <div class="col-md-3 col-sm-6">
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Filter
+            </button>
+            <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
+                <form class="px-4 py-2">
+                    <input type="search" class="form-control"n id="searchCoin" placeholder="Search" autofocus="autofocus">
+                </form>
+                <div id="menuItems"></div>
+                <div id="empty" class="dropdown-header">No coins found</div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
 
-        
         @foreach($products as $product)
         <div class="col-md-3 col-sm-6">
             <div class="product-grid3">
@@ -242,7 +264,7 @@
                         <img class="pic-2" src="{{asset('images/EYOU leak proof caps 1.jpg')}}">
                     </a>
                     <ul class="social">
-                        <li><a href="{{route ('checkout')}}"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="{{route ('checkout.checkout')}}"><i class="fa fa-shopping-bag"></i></a></li>
                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                     <span class="product-new-label">New</span>
@@ -266,18 +288,4 @@
     </div>
 </div>
 
-<!-- @foreach($products ?? '' as $product)
-            <tr>
-                <th scope="row">{{$product->id}}</th>
-                <td>{{$product->Product_Id}}</td>
-                <td>{{$product->name}}</td>
-                <td>{{$product->description}}</td>
-                {{--  <td>{{$product->item_quantity}}</td>  --}}
-                <td>{{$product->ProductPrice}}</td>
-                <td>{{$product->Image}}</td>
-                <td>{{$product->available ? 'Yes' : 'No'}}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table> -->
 @endsection

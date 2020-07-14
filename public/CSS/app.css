@@ -4,12 +4,12 @@
 }
 
 #navs {
-  position: absolute;
+  position: relative;
   width: 100%;
-  z-index: 999;
-  background: none;
-  background: rgba(0, 151, 19, 0.3)
-  
+  /* z-index: 999; */
+  /* background: none; */
+  background: rgba(4, 107, 18, 0.836);
+  margin: 0px;
 }
 
 nav ul {
@@ -523,3 +523,5 @@ nav ul li a:hover {
 .like {
   font-size: 1.5rem;
 }
+
+

@@ -38,8 +38,8 @@ class User extends Authenticatable
     ];
 
 
-    public function isAdmin()
-    {
-        return $this->admin;
-    }
+    // public function isAdmin()
+    // {
+    //     return $this->admin;
+    // }
 }

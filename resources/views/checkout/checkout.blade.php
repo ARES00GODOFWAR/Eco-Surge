@@ -81,6 +81,8 @@
         </div>
       </form>
     </div>
+
+    
     <div class="col-md-6 order-md-1  billing-info">
       <h4 class="mb-3">Billing address</h4>
       <form class="needs-validation" novalidate="">
@@ -104,9 +106,6 @@
         <div class="mb-3">
           <label for="username">Username</label>
           <div class="input-group">
-            {{--  <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
-            </div>  --}}
             <input type="text" class="form-control" id="username" placeholder="Username" required="">
             <div class="invalid-feedback" style="width: 100%;">
               Your username is required.

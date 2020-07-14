@@ -7,6 +7,12 @@
 
     <title>{{ config('app.name', 'Eco-Surge') }}</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+       
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
@@ -64,16 +70,8 @@
                     <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ route('home') }}">Home<span
                             class="sr-only">(current)</span></a>
                 </li>
-                {{--  <li class="nav-item active">
-                    <a class="nav-link" href="Pages.html">Pages</a>
-                </li>  --}}
-                {{--  <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('portfolio') }}">Portfolio</a>
-                </li>  --}}
+            
 
-                {{--  <li class="nav-item active">
-                    <a class="nav-link" href="Blog.html">Blog</a>
-                </li>  --}}
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('productShow') }}">Shop</a>
                 </li>
@@ -84,6 +82,43 @@
                     <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
             </ul>
+                @guest
+                <a class="nav-item nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                @if (Route::has('register'))
+                    <a class="nav-item nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                @endif
+            @else
+                <div class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        {{ Auth::user()->name }}
+                    </a>
+                    <div
+                        class="dropdown-menu"
+                        aria-labelledby="navbarDropdown"
+                    >
+                        <a class="dropdown-item" href="{{ route('login') }}">Profile</a>
+                        <a class="dropdown-item" href="/settings"> Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                        >
+                            {{ __('Logout') }}
+                        </a>
+                    </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            @endguest
+
     </nav>
 
 
@@ -91,10 +126,7 @@
         <div class="home_content_container">
 
             @yield('home_content')
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
+        
         </div>
 
     </section>
@@ -103,20 +135,13 @@
         <div>
 
             @yield('portfolio_content')
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
+            
         </div>
 
     </section>
     <section>
-        <div>
-
+    
             @yield('content')
-        
-        </div>
-
     </section>
 
 
