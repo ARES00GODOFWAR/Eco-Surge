@@ -51,6 +51,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     @yield('checkout-styles')
     @yield('styles')
+    @yield('payment-styles')
     @yield('item_page_styles')
     @yield('product_page_styles')
     @yield('login-styles')

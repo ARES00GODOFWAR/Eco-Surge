@@ -23,14 +23,17 @@ Route::get('/home', function () {
 
 // Route::get('/home', 'HomeController@index');
 
-// Route::get('/portfolio', function () {
-//     return view('portfolio');
-// })->name('portfolio');
+// Route::get('/Shipping', function () {
+//     return view('shipping');
+// })->name('shipping');
 
 
-//checkout 
-Route::get('/checkout', 'CheckoutController@index')->name('checkout.checkout');
+Route::resource('shipping', 'ShippingController');
 
+
+Route::get('/shipping', 'ShippingController@index')->name('shipping');
+
+Route::get('/payment', 'PaymentController@index')->name('payment');
 
 Route::group(['middleware' => ['auth']], function() {
 Route::get('/settings', 'Settings@settings');

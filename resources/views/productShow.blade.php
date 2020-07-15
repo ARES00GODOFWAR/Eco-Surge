@@ -272,7 +272,7 @@
                         <img class="pic-2" src="{{asset('images/EYOU leak proof caps 1.jpg')}}">
                     </a>
                     <ul class="social">
-                        <li><a href="{{route ('checkout.checkout')}}"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="{{ route('shipping') }}"><i class="fa fa-shopping-bag"></i></a></li>
                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                     <span class="product-new-label">New</span>

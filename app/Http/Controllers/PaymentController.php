@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CheckoutController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        return view('checkout.checkout');
+        return view('payment');
     }
 
     /**

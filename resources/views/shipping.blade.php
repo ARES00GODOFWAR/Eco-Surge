@@ -6,7 +6,7 @@
 <style>
 
 .row{
-    margin-top: 130px;
+    margin-top: 50px;
     margin-right: 0%;
 }
 .billing-info{
@@ -26,13 +26,13 @@
 @section('content')
 
 <body>
-  <script src="https://www.paypal.com/sdk/js?client-id=AeDAGPmyWBCX3nwiM_S-lvVMbU2ueqhQrhX-9AFyrwkftNFt17TT6tVoMGoyUktBjiLjzk-jep_edrtC"></script>
+ 
 
  
 
 <div class="row">
     
-    <div class="col-md-4 order-md-2 mb-4 cart-details">
+    <!-- <div class="col-md-4 order-md-2 mb-4 cart-details">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
         <span class="badge badge-secondary badge-pill">3</span>
@@ -80,13 +80,22 @@
           </div>
         </div>
       </form>
-    </div>
+    </div> -->
 
-    
-    <div class="col-md-6 order-md-1  billing-info">
-      <h4 class="mb-3">Billing address</h4>
-      <form class="needs-validation" novalidate="">
-        <div class="row">
+    <!-- Shipping & payment -->
+    <div class="billing-info">
+      <h1>Select a shipping address</h1>
+      <p>Is the address you'd like to use displayed below? If so, click the corresponding "Deliver to this address" button. Or you can enter a new shipping address.</p>
+
+      <hr>
+
+
+      <h4 class="mb-3">Add a new address</h4>
+      <p>Be sure to click "Deliver to this address" when done.</p>
+
+      <form method="POST" action="{{route('shipping.store')}}" class=" col-md-7 col-sm-6 needs-validation" novalidate="">
+        {{csrf_field()}} 
+        <!-- <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
             <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
@@ -101,138 +110,101 @@
               Valid last name is required.
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="mb-3">
-          <label for="username">Username</label>
+          <label for="name">Name</label>
           <div class="input-group">
-            <input type="text" class="form-control" id="username" placeholder="Username" required="">
+            <input type="text" class="form-control" name="name" id="name"  required="">
             <div class="invalid-feedback" style="width: 100%;">
-              Your username is required.
+              Valid name is required.
             </div>
           </div>
         </div>
 
         <div class="mb-3">
+          <label for="addressline1">Address line 1:</label>
+          <div class="input-group">
+            <input type="text" class="form-control" name="address1" id="address1" placeholder="Street address, P.O. box, company name, c/o" required="">
+            <div class="invalid-feedback" style="width: 100%;">
+              Your address is required.
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="mb-3">
           <label for="email">Email <span class="text-muted">(Optional)</span></label>
           <input type="email" class="form-control" id="email" placeholder="you@example.com">
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
-        </div>
+        </div> -->
 
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="address">Address</label>
           <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
-        </div>
+        </div> -->
 
         <div class="mb-3">
           <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite">
         </div>
 
-        <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required="">
-              <option value="">Choose...</option>
-              <option>United States</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid country.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required="">
-              <option value="">Choose...</option>
-              <option>California</option>
-            </select>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required="">
-            <div class="invalid-feedback">
-              Zip code required.
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="same-address">
-          <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-        </div>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="save-info">
-          <label class="custom-control-label" for="save-info">Save this information for next time</label>
-        </div>
-        <hr class="mb-4">
-
-        <h4 class="mb-3">Payment</h4>
-
-        <div class="d-block my-3">
-          <!-- <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="credit">Credit card</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="debit">Debit card</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="paypal">Paypal</label>
-          </div> -->
-
-          <div id="paypal-button-container"></div>
+        <div class="mb-3">
+          <label for="city">City:</label>
+          <input type="text" name="city" class="form-control" id="city">
         </div>
 
+        <div class="mb-3">
+          <label for="parish">Parish/State/Province/Region:</label>
+          <select class="custom-select d-block w-100" name="parish" id="parish">
+            <option value="">Choose...</option>
+            <option>Kingston</option>
+            <option>St. Andrew</option>
+            <option>St. Catherine</option>
+            <option>Clarendon</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="zip">Zip</label>
+          <input type="text" class="form-control" name="zip" id="zip" placeholder="" required="">
+          <div class="invalid-feedback">
+            Zip code required.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="country">Country/Region:</label>
+          <select class="custom-select d-block w-100" name="country" id="country">
+            <option value="">Choose...</option>
+            <option>Kingston</option>
+            <option>St. Andrew</option>
+            <option>St. Catherine</option>
+            <option>Clarendon</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="phoneNum">Phone Number</label>
+          <input type="text" class="form-control" name="phoneNum" id="phoneNum" placeholder="" required="">
+        </div>
+
+        <div class="mb-3">
+          <label for="deliveryInstruct">Add delivery instructions (optional)</label><br>
+          <p>Do we need additional instructions to find this address?</p>
+          <textarea name="deliveryInstruct" id="deliveryInstruct" cols="72" rows="3" placeholder="Please provide details such as building description, nearby landmark, or other navigation instructions"></textarea>
+        </div>
 
         
 
 
 
-        <!-- <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-            <small class="text-muted">Full name as displayed on card</small>
-            <div class="invalid-feedback">
-              Name on card is required
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="cc-number">Credit card number</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-            <div class="invalid-feedback">
-              Credit card number is required
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="cc-expiration">Expiration</label>
-            <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-            <div class="invalid-feedback">
-              Expiration date required
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="cc-expiration">CVV</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-            <div class="invalid-feedback">
-              Security code required
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button> -->
+     
+        <button class="btn btn-primary btn-lg btn-block " id="deliver-btn" type="submit">Deliver to this address</button> -->
       </form>
     </div>
   </div>
