@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,5 +55,6 @@ Route::get('/create', 'ProductController@create')->name('create');
 
 Route::post('/products', 'ProductController@store');
 Route::get('/products', 'ProductController@index')->name('productShow');
+
 
 
