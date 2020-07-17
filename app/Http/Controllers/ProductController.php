@@ -57,9 +57,6 @@ class ProductController extends Controller
 
         
         // Product::create($formInput);
-        Product::create($request->all());
-
-        return redirect('/products');
     }
 
     /**

@@ -15,6 +15,7 @@ class ShippingController extends Controller
      */
     public function index()
     {
+        
         if (Auth::check()) {
             return view('shipping');
         }else{
