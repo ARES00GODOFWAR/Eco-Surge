@@ -2,17 +2,21 @@
 
 
 @section('product_page_styles')
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
 
 
+
       .container{
          margin-top: 150px ;
-        
-         
+
+
       }
       .row{
-        margin-left: 0px;
+        margin-top: 150px;
+        margin-left: 300px;
         margin-right: 0px;
         margin-bottom: 60px ;
       }
@@ -224,12 +228,102 @@
 
     h1{
         margin-top: 40px;
-        text-align: center;
+        margin-left: 580px;
+
         text-transform: uppercase;
     }
     .container{
         margin: 0px
     }
+
+
+    .category-head{
+        position: absolute;
+        top: 380px;
+        left: 65px;
+        background-color: lightgray;
+        color: black;
+        padding: 12px 12px;
+        border-radius: 20px;
+        width: 110px;
+        font-family: serif;
+        cursor: pointer;
+    }
+
+    #down{
+        position: absolute;
+        top: -16px;
+        left: -116px;
+        color: black;
+        border: none;
+        font-size: 15px;
+    }
+
+    .search{
+        position: absolute;
+        top: 330px;
+        left: 620px;
+        border: 1px solid rgba(0, 0, 0, .7);
+        padding: 13px 13px;
+        border-radius: 20px;
+        width: 350px;
+
+    }
+
+    .search:focus{
+        outline: none;
+    }
+
+    #search{
+        position: absolute;
+        top: 330px;
+        left: 620px;
+        border-radius: 20px;
+        color: black;
+        font-size: 20px;
+
+
+    }
+
+    .search-header{
+        position: absolute;
+        top: 250px;
+        left: 750px;
+    }
+
+
+    .border{
+        position: absolute;
+        top: 400px;
+        left: 260px;
+        width: 3px;
+        background-color: rgba(0, 0, 0, .2);
+        height:400px;
+    }
+
+
+    .btn{
+        position: absolute;
+        top: -110px;
+        left: 182px;
+        padding: 10px 10px;
+        border-radius: 4px;
+        background-color: black;
+        border: 1px solid rgba(0, 0, 0, .7);
+        cursor: pointer;
+
+    }
+
+    #dropdown_coins{
+        position: absolute;
+        top: 340px;
+        left: 30px;
+        background-color: lightgray;
+        color: black;
+        padding: 10px 10px;
+        border-radius: 20px;
+        width: 150px;
+}
 
 </style>
 
@@ -261,6 +355,14 @@
         </div>
     </div>
 
+    <h2 class="search-header">Search</h2>
+    <form>
+        <input type="search" class="search" placeholder="search">
+        <button class="btn" type="submit"><i id="search" class="fas fa-search"></i></button>
+    </form>
+    <h4 class="category-head">Category <i id="down" class="fas fa-sort-down"></i></h4>
+
+    <div class="border"></div>
     <div class="row">
 
         @foreach($products as $product)

@@ -185,12 +185,18 @@
             <div id="paypal-button-container"></div>
             <br>
             <br>
-        
+
+            <h3>Stripe</h3>
+            <hr>
+            <div id="stripe-button-container"></div>
+            <br>
+            <br>
+
         </form>
     </div>
 
     <div class="display-product">
-    
+
         <div class="col-md-12 order-md-4 mb-4 cart-details">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Your cart</span>

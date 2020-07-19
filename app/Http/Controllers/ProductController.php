@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+
         $products = Product::all();
         return view('productShow',compact('products',$products));
     }
@@ -43,8 +43,9 @@ class ProductController extends Controller
             'Product_Id' => 'required',
             'available' => 'required',
             'Image' => 'required',
-            'description' => 'required',
+            'description' => 'required'
         ]);
+
 
         //     $formInput=$request->except('Image');
 
@@ -55,8 +56,14 @@ class ProductController extends Controller
         //     $formInput['Image']=$imageName;
         // }
 
-        
+
         // Product::create($formInput);
+
+
+        Product::create($request->all());
+
+        return redirect('/products');
+
     }
 
     /**
