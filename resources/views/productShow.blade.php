@@ -15,8 +15,8 @@
 
       }
       .row{
-        margin-top: 150px;
-        margin-left: 300px;
+        margin-top: 100px;
+        margin-left: 150px;
         margin-right: 0px;
         margin-bottom: 60px ;
       }
@@ -227,9 +227,8 @@
     }
 
     h1{
-        margin-top: 40px;
-        margin-left: 580px;
-
+        margin-top: 100px;
+        margin-left: 160px;
         text-transform: uppercase;
     }
     .container{
@@ -263,10 +262,13 @@
         position: absolute;
         top: 330px;
         left: 620px;
-        border: 1px solid rgba(0, 0, 0, .7);
-        padding: 13px 13px;
+        border: 0.5px solid rgba(0, 0, 0, .2);
+        padding: 11px 11px;
         border-radius: 20px;
-        width: 350px;
+        width: 380px;
+        box-shadow: 5px 5px 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 15px;
 
     }
 
@@ -276,11 +278,14 @@
 
     #search{
         position: absolute;
-        top: 330px;
-        left: 620px;
+        top: 320px;
+        left: 760px;
         border-radius: 20px;
-        color: black;
-        font-size: 20px;
+        color:rgba(0, 0, 0, .1);
+        font-size: 17px;
+        border: none;
+        animation: none;
+
 
 
     }
@@ -297,22 +302,11 @@
         top: 400px;
         left: 260px;
         width: 3px;
-        background-color: rgba(0, 0, 0, .2);
         height:400px;
     }
 
 
-    .btn{
-        position: absolute;
-        top: -110px;
-        left: 182px;
-        padding: 10px 10px;
-        border-radius: 4px;
-        background-color: black;
-        border: 1px solid rgba(0, 0, 0, .7);
-        cursor: pointer;
 
-    }
 
     #dropdown_coins{
         position: absolute;
@@ -325,6 +319,54 @@
         width: 150px;
 }
 
+form{
+    z-index: 9999999;
+    position: absolute;
+    top: -300px;
+    left: 0;
+
+}
+
+hr{
+    width: 1041px;
+    margin-top: 20px;
+    margin-left: 160px;
+    color: black;
+}
+select{
+    margin-top: 10px;
+    margin-left: 1000px;
+    width: 200px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    border:0.5px solid  lightgray;
+}
+
+
+option{
+    object-position: 900px;
+}
+
+.sort{
+    margin-top: 15px;
+    margin-left: 1100px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+
+.leftgray{
+    position: absolute;
+    width: 130px;
+    height: 140%;
+    background-color: lightgray;
+}
+
+
+
+
 </style>
 
 @endsection
@@ -336,11 +378,25 @@
 @endif
 
 
-<div class="container"></div>
-        <h1 class="h1">Our Latest Products</h1>
-        <div class="col-md-3 col-sm-6">
+<form>
+    <input type="search" class="search" placeholder="Search Products, Collection, Keywords">
+    <button class="btn" type="submit"><i id="search" class="fas fa-search"></i></button>
+</form>
 
-        <div class="dropdown">
+<div class="container"></div>
+<!--<div class="leftgray"></div>-->
+        <h1 class="h1">Our Latest Products</h1>
+        <hr>
+        <select>
+            <option >Revelance</option>
+            <option >A-Z</option>
+            <option >Z-A</option>
+            <option >Popular</option>
+            <option >Price - Low to High</option>
+        </select>
+        <p class="sort">Sort</p>
+        <div class="col-md-3 col-sm-6">
+        <!---<div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 Filter
@@ -352,17 +408,15 @@
                 <div id="menuItems"></div>
                 <div id="empty" class="dropdown-header">No coins found</div>
             </div>
-        </div>
+        </div>--->
     </div>
 
-    <h2 class="search-header">Search</h2>
-    <form>
-        <input type="search" class="search" placeholder="search">
-        <button class="btn" type="submit"><i id="search" class="fas fa-search"></i></button>
-    </form>
+
+    <!--<h2 class="search-header">Search</h2>
+
     <h4 class="category-head">Category <i id="down" class="fas fa-sort-down"></i></h4>
 
-    <div class="border"></div>
+    <div class="border"></div>--->
     <div class="row">
 
         @foreach($products as $product)
