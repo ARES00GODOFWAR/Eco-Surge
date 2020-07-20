@@ -32,6 +32,7 @@ Route::get('/home', function () {
 
 Route::resource('shipping', 'ShippingController');
 
+Route::get('/delivery', 'DeliveryController@index')->name('delivery');
 
 Route::get('/shipping', 'ShippingController@index')->name('shipping');
 

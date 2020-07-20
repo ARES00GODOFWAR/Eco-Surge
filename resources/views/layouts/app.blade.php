@@ -41,6 +41,14 @@
 
     </script>
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/fa65928553.js" crossorigin="anonymous"></script>
+
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -56,14 +64,15 @@
     @yield('product_page_styles')
     @yield('login-styles')
     @yield('registration-styles')
+    @yield('delivery-styles')
 </head>
 
 <body>
 
 
     <nav class="navbar navbar-expand-lg" id="navs">
-        <a class="EcoU-brand" href="index.html"><img src="{{asset('images/eco_u.png')}}" alt="Logo"
-                style="width:180px;" /></a>
+        <a class="EcoU-brand" href="{{ route('home') }}"><img class="rounded-circle" src="{{asset('images/mello roma ppic.jpg')}}" alt="Logo"
+                style="width:120px;" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

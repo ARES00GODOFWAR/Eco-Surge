@@ -9,17 +9,20 @@
 
 
 
-      .container{
-         margin-top: 150px ;
-
-
-      }
-      .row{
+    .container {
         margin-top: 150px;
-        margin-left: 300px;
+
+
+    }
+
+    .row {
+        margin-top: 200px;
+        margin-left: 340px;
         margin-right: 0px;
-        margin-bottom: 60px ;
-      }
+        margin-bottom: 60px;
+        width: 70%;
+    }
+
     .product-grid3 {
         font-family: Roboto, sans-serif;
         text-align: center;
@@ -218,91 +221,112 @@
         }
     }
 
-    .btn{
+    .btn {
         width: 300px;
         margin-top: 100px;
     }
-    #menu{
+
+    #menu {
         width: 300px;
     }
 
-    h1{
-        margin-top: 40px;
-        margin-left: 580px;
+    h1 {
+        margin-top: 50px;
+        margin-left: 490px;
 
         text-transform: uppercase;
     }
-    .container{
+
+    .container {
         margin: 0px
     }
 
 
-    .category-head{
+    .category-head {
         position: absolute;
-        top: 380px;
-        left: 65px;
-        background-color: lightgray;
+        top: 420px;
+        left: 25px;
         color: black;
         padding: 12px 12px;
         border-radius: 20px;
-        width: 110px;
+        width: 210px;
         font-family: serif;
         cursor: pointer;
     }
 
-    #down{
+    .filter {
         position: absolute;
-        top: -16px;
-        left: -116px;
+        top: 580px;
+        left: 25px;
         color: black;
-        border: none;
-        font-size: 15px;
+        padding: 12px 12px;
+        border-radius: 20px;
+        width: 210px;
+        font-family: serif;
+        cursor: pointer;
     }
 
-    .search{
+        {
+            {
+            -- #down {
+                position: absolute;
+                top: -16px;
+                left: -116px;
+                color: black;
+                border: none;
+                font-size: 15px;
+            }
+
+            --
+        }
+    }
+
+    .search {
         position: absolute;
         top: 330px;
-        left: 620px;
-        border: 1px solid rgba(0, 0, 0, .7);
+        left: 840px;
         padding: 13px 13px;
-        border-radius: 20px;
         width: 350px;
 
     }
 
-    .search:focus{
+    .search:focus {
         outline: none;
     }
 
-    #search{
+    {{--  #search {
         position: absolute;
-        top: 330px;
-        left: 620px;
-        border-radius: 20px;
-        color: black;
+        top: 325px;
+        left: 850px;
         font-size: 20px;
 
 
+    }  --}}
+
+        {
+            {
+            -- .search-header {
+                position: absolute;
+                top: 250px;
+                left: 750px;
+            }
+
+            --
+        }
     }
 
-    .search-header{
-        position: absolute;
-        top: 250px;
-        left: 750px;
-    }
 
-
-    .border{
+    .border {
         position: absolute;
-        top: 400px;
+        top: 452px;
         left: 260px;
         width: 3px;
         background-color: rgba(0, 0, 0, .2);
-        height:400px;
+        height: 600px;
     }
 
 
-    .btn{
+    .btn {
         position: absolute;
         top: -110px;
         left: 182px;
@@ -314,7 +338,7 @@
 
     }
 
-    #dropdown_coins{
+    #dropdown_coins {
         position: absolute;
         top: 340px;
         left: 30px;
@@ -323,7 +347,41 @@
         padding: 10px 10px;
         border-radius: 20px;
         width: 150px;
-}
+    }
+
+    {{--  .active-pink-2 input[type=text]:focus:not([readonly]) {
+        border-bottom: 1px solid #f48fb1;
+        box-shadow: 0 1px 0 0 #f48fb1;
+      }
+      .active-pink input[type=text] {
+        border-bottom: 1px solid #f48fb1;
+        box-shadow: 0 1px 0 0 #f48fb1;
+      }
+      .active-purple-2 input[type=text]:focus:not([readonly]) {
+        border-bottom: 1px solid #ce93d8;
+        box-shadow: 0 1px 0 0 #ce93d8;
+      }
+      .active-purple input[type=text] {
+        border-bottom: 1px solid #ce93d8;
+        box-shadow: 0 1px 0 0 #ce93d8;
+      }
+      .active-cyan-2 input[type=text]:focus:not([readonly]) {
+        border-bottom: 1px solid #4dd0e1;
+        box-shadow: 0 1px 0 0 #4dd0e1;
+      }
+      .active-cyan input[type=text] {
+        border-bottom: 1px solid #4dd0e1;
+        box-shadow: 0 1px 0 0 #4dd0e1;
+      }
+      .active-cyan .fa, .active-cyan-2 .fa {
+        color: #4dd0e1;
+      }
+      .active-purple .fa, .active-purple-2 .fa {
+        color: #ce93d8;
+      }
+      .active-pink .fa, .active-pink-2 .fa {
+        color: #f48fb1;
+      }  --}}
 
 </style>
 
@@ -337,8 +395,8 @@
 
 
 <div class="container"></div>
-        <h1 class="h1">Our Latest Products</h1>
-        <div class="col-md-3 col-sm-6">
+<h1 class="h1">Our Products</h1>
+{{--  <div class="col-md-3 col-sm-6">
 
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
@@ -353,49 +411,81 @@
                 <div id="empty" class="dropdown-header">No coins found</div>
             </div>
         </div>
-    </div>
+    </div>  --}}
 
-    <h2 class="search-header">Search</h2>
-    <form>
+<form class="form-inline d-flex justify-content-center md-form form-sm search">
+    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+    <i class="fas fa-search"></i>
+</form>
+
+
+{{--  <form>
         <input type="search" class="search" placeholder="search">
         <button class="btn" type="submit"><i id="search" class="fas fa-search"></i></button>
     </form>
-    <h4 class="category-head">Category <i id="down" class="fas fa-sort-down"></i></h4>
+      --}}
+{{--  <h4 class="category-head">Category</h4>  --}}
 
-    <div class="border"></div>
-    <div class="row">
+<ul class="category-head">
+    <li>Categories</li>
+    <ul>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+    </ul>
+    <hr>
+</ul>
 
-        @foreach($products as $product)
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid3">
-                <div class="product-image3">
-                    <a href="#">
-                        <img class="pic-1" src="{{asset('images/EYOU leak proof caps.jpg')}}">
-                        <img class="pic-2" src="{{asset('images/EYOU leak proof caps 1.jpg')}}">
-                    </a>
-                    <ul class="social">
-                        <li><a href="{{ route('shipping') }}"><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                    <span class="product-new-label">New</span>
+<ul class="filter">
+    <li>Filter by</li>
+    <ul>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+        <li>Playstation 4</li>
+    </ul>
+    <hr>
+</ul>
+
+{{--  <h4 >Filter</h4>  --}}
+
+<div class="border"></div>
+<div class="row">
+
+    @foreach($products as $product)
+    <div class="col-md-3 col-sm-3">
+        <div class="product-grid3">
+            <div class="product-image3">
+                <a href="#">
+                    <img class="pic-1" src="{{asset('images/EYOU leak proof caps.jpg')}}">
+                    <img class="pic-2" src="{{asset('images/EYOU leak proof caps 1.jpg')}}">
+                </a>
+                <ul class="social">
+                    <li><a href="{{ route('shipping') }}"><i class="fa fa-shopping-bag"></i></a></li>
+                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+                <span class="product-new-label">New</span>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">{{$product->name}}</a></h3>
+                <div class="price">
+                    {{$product->ProductPrice}}
                 </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">{{$product->name}}</a></h3>
-                    <div class="price">
-                        {{$product->ProductPrice}}
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star disable"></li>
+                    <li class="fa fa-star disable"></li>
+                </ul>
             </div>
         </div>
-        @endforeach
     </div>
+    @endforeach
+</div>
 </div>
 
 @endsection
