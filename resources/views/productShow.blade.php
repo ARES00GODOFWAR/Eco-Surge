@@ -13,13 +13,14 @@
         margin-top: 150px;
 
 
+
+
       }
       .row{
-        margin-top: 100px;
+
+        margin-top: 550px;
         margin-left: 150px;
-        margin-right: 0px;
-        margin-bottom: 60px;
-        width: 70%;
+
     }
 
     .product-grid3 {
@@ -27,7 +28,8 @@
         text-align: center;
         position: relative;
         z-index: 1;
-        margin-top: 50px;
+        margin-top: -450px;
+
     }
 
     .product-grid3:before {
@@ -403,6 +405,7 @@ select{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
     border:0.5px solid  lightgray;
+    cursor: pointer;
 }
 
 
@@ -411,18 +414,11 @@ option{
 }
 
 .sort{
-    margin-top: 15px;
-    margin-left: 1100px;
+    margin-top: 20px;
+    margin-left: 1000px;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
-}
-
-.leftgray{
-    position: absolute;
-    width: 130px;
-    height: 140%;
-    background-color: lightgray;
 }
 
 
@@ -456,7 +452,7 @@ option{
             <option >Price - Low to High</option>
         </select>
         <p class="sort">Sort</p>
-        <div class="col-md-3 col-sm-6">
+        <!---<div class="col-md-3 col-sm-6">--->
         <!---<div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -507,17 +503,10 @@ option{
                         <li class="fa fa-star disable"></li>
                     </ul>
                 </div>
-                <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star disable"></li>
-                    <li class="fa fa-star disable"></li>
-                </ul>
             </div>
         </div>
+        @endforeach
     </div>
-    @endforeach
 </div>
 </div>
 
