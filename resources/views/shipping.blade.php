@@ -10,7 +10,7 @@
     margin-right: 0%;
 }
 .billing-info{
-    margin-left: 100px;
+      margin-left: 100px;
 }
 
 .cart-details{

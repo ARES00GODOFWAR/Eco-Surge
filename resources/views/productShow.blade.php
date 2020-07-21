@@ -9,8 +9,8 @@
 
 
 
-      .container{
-         margin-top: 150px ;
+    .container {
+        margin-top: 150px;
 
 
       }
@@ -18,8 +18,10 @@
         margin-top: 100px;
         margin-left: 150px;
         margin-right: 0px;
-        margin-bottom: 60px ;
-      }
+        margin-bottom: 60px;
+        width: 70%;
+    }
+
     .product-grid3 {
         font-family: Roboto, sans-serif;
         text-align: center;
@@ -218,11 +220,12 @@
         }
     }
 
-    .btn{
+    .btn {
         width: 300px;
         margin-top: 100px;
     }
-    #menu{
+
+    #menu {
         width: 300px;
     }
 
@@ -231,34 +234,52 @@
         margin-left: 160px;
         text-transform: uppercase;
     }
-    .container{
+
+    .container {
         margin: 0px
     }
 
 
-    .category-head{
+    .category-head {
         position: absolute;
-        top: 380px;
-        left: 65px;
-        background-color: lightgray;
+        top: 420px;
+        left: 25px;
         color: black;
         padding: 12px 12px;
         border-radius: 20px;
-        width: 110px;
+        width: 210px;
         font-family: serif;
         cursor: pointer;
     }
 
-    #down{
+    .filter {
         position: absolute;
-        top: -16px;
-        left: -116px;
+        top: 580px;
+        left: 25px;
         color: black;
-        border: none;
-        font-size: 15px;
+        padding: 12px 12px;
+        border-radius: 20px;
+        width: 210px;
+        font-family: serif;
+        cursor: pointer;
     }
 
-    .search{
+        {
+            {
+            -- #down {
+                position: absolute;
+                top: -16px;
+                left: -116px;
+                color: black;
+                border: none;
+                font-size: 15px;
+            }
+
+            --
+        }
+    }
+
+    .search {
         position: absolute;
         top: 330px;
         left: 620px;
@@ -272,11 +293,11 @@
 
     }
 
-    .search:focus{
+    .search:focus {
         outline: none;
     }
 
-    #search{
+    {{--  #search {
         position: absolute;
         top: 320px;
         left: 760px;
@@ -288,18 +309,24 @@
 
 
 
+    }  --}}
+
+        {
+            {
+            -- .search-header {
+                position: absolute;
+                top: 250px;
+                left: 750px;
+            }
+
+            --
+        }
     }
 
-    .search-header{
-        position: absolute;
-        top: 250px;
-        left: 750px;
-    }
 
-
-    .border{
+    .border {
         position: absolute;
-        top: 400px;
+        top: 452px;
         left: 260px;
         width: 3px;
         height:400px;
@@ -308,7 +335,7 @@
 
 
 
-    #dropdown_coins{
+    #dropdown_coins {
         position: absolute;
         top: 340px;
         left: 30px;
@@ -317,7 +344,41 @@
         padding: 10px 10px;
         border-radius: 20px;
         width: 150px;
-}
+    }
+
+    {{--  .active-pink-2 input[type=text]:focus:not([readonly]) {
+        border-bottom: 1px solid #f48fb1;
+        box-shadow: 0 1px 0 0 #f48fb1;
+      }
+      .active-pink input[type=text] {
+        border-bottom: 1px solid #f48fb1;
+        box-shadow: 0 1px 0 0 #f48fb1;
+      }
+      .active-purple-2 input[type=text]:focus:not([readonly]) {
+        border-bottom: 1px solid #ce93d8;
+        box-shadow: 0 1px 0 0 #ce93d8;
+      }
+      .active-purple input[type=text] {
+        border-bottom: 1px solid #ce93d8;
+        box-shadow: 0 1px 0 0 #ce93d8;
+      }
+      .active-cyan-2 input[type=text]:focus:not([readonly]) {
+        border-bottom: 1px solid #4dd0e1;
+        box-shadow: 0 1px 0 0 #4dd0e1;
+      }
+      .active-cyan input[type=text] {
+        border-bottom: 1px solid #4dd0e1;
+        box-shadow: 0 1px 0 0 #4dd0e1;
+      }
+      .active-cyan .fa, .active-cyan-2 .fa {
+        color: #4dd0e1;
+      }
+      .active-purple .fa, .active-purple-2 .fa {
+        color: #ce93d8;
+      }
+      .active-pink .fa, .active-pink-2 .fa {
+        color: #f48fb1;
+      }  --}}
 
 form{
     z-index: 9999999;
@@ -446,10 +507,18 @@ option{
                         <li class="fa fa-star disable"></li>
                     </ul>
                 </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star disable"></li>
+                    <li class="fa fa-star disable"></li>
+                </ul>
             </div>
         </div>
-        @endforeach
     </div>
+    @endforeach
+</div>
 </div>
 
 @endsection
